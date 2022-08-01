@@ -1,5 +1,13 @@
 {{ 'main-collection.css' | asset_url | stylesheet_tag }}
 
+<style>
+    {% if section.settings.background-img %}    
+        #{{ section.id }} .background-img {
+            background-image: url({{ section.settings.background-img | img_url: 'master' }});
+        }
+    {% endif %}
+</style>
+
 <section class="main-collection" id="{{ section.id }}">
     <div class="background-img">
         <div class="gradient-top"></div>
@@ -10,62 +18,18 @@
                         render 'collection-card',
                         heading: block.settings.heading,
                         photo: block.settings.photo,
+                        description: block.settings.description,
                         link_text: block.settings.link_text,
                         btn_text: block.settings.btn_text
                     %}
-                        <!-- <div class="collection-card">
-                            <h2 class="heading alex-murphy__80-50_400">{{ heading }}</h2>
-                            <div class="border">
-                                <img src="{{ photo | img_url: 'master' }}" class="collection-card_photo">
-                                <div class="collection-card_description">
-                                    <p class="red-hat__15-20_400">{{ description }}</p>
-                                </div>
-                                <div class="collection-card_btn--wrapper">
-                                    <a class="chakra-petch__20-25_700 collection-card_btn" href="{{ link_text }}">{{ btn_text }}</a>
-                                </div>
-                            </div>
-                        </div> -->
                 {% endif %}
             {% endfor %}
         </div>
-        <!-- <div class="collection-card">
-            <h2 class="heading alex-murphy__80-50_400 heading-right">{{ section.settings.collection-card_heading-right }}</h2>
-            <div class="border">
-                 <img src="{{ section.settings.collection-card_photo-right }}" class="collection-card_photo">
-            <div class="collection-card_description">
-                <p class="red-hat__15-20_400">{{ section.settings.collection-card_description-right }}</p>
-            </div>
-            <div class="collection-card_btn--wrapper">
-                <a class="chakra-petch__20-25_700 collection-card_btn" href="{{ section.settings.collection-card_link-right }}">{{ section.settings.collection-card_text-right }}</a>
-            </div>
-            </div>
-        </div> -->
         <div class="gradient-low"></div>
     </div>
 </section>
 
-<!-- {% for block in section.blocks %}
-    {% if block.type == "collection-card" %}
-        {%
-            render 'collection-card',
-            heading: block.settings.heading,
-            photo: block.settings.photo,
-            link_text: block.settings.link_text,
-            btn_text: block.settings.btn_text
-        %}
-    {% endif %}
-{% endfor %} -->
-
-<style>
-    {% if section.settings.background-img %}    
-        #{{ section.id }} .background-img {
-            background-image: url({{ section.settings.background-img | img_url: 'master' }});
-        }
-    {% endif %}
-</style>
-
 {% schema %}
-
 
 {
     "name": "Main collection",

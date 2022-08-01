@@ -11,18 +11,34 @@
     },
     "1657484333e3b0b278": {
       "type": "main-collection",
+      "blocks": {
+        "bae04c34-a8d5-4c23-958d-dbdcc14409e9": {
+          "type": "collection-card",
+          "settings": {
+            "heading": "Necklaces",
+            "photo": "shopify:\/\/shop_images\/neckels.jpg",
+            "description": "Our Lennox Pendant Necklace blends modernized materials with vintage inspired design",
+            "btn_text": "customize",
+            "link_text": ""
+          }
+        },
+        "2605f0bd-7dfa-4812-bad4-4454e085e0e4": {
+          "type": "collection-card",
+          "settings": {
+            "heading": "Rings",
+            "photo": "shopify:\/\/shop_images\/image_2.jpg",
+            "description": "Our Lennox Pendant Necklace blends modernized materials with vintage inspired design",
+            "btn_text": "customize",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "bae04c34-a8d5-4c23-958d-dbdcc14409e9",
+        "2605f0bd-7dfa-4812-bad4-4454e085e0e4"
+      ],
       "settings": {
-        "background-img": "shopify:\/\/shop_images\/Background.jpg",
-        "collection-card_heading-left": "Necklaces",
-        "collection-card_photo-left": "https:\/\/cdn.shopify.com\/s\/files\/1\/0576\/5408\/3627\/files\/neckels.jpg?v=1657567899",
-        "collection-card_description-left": "Our Lennox Pendant Necklace blends modernized materials with vintage inspired design",
-        "collection-card_link-left": "#",
-        "collection-card_text-left": "customize",
-        "collection-card_heading-right": "Rings",
-        "collection-card_photo-right": "https:\/\/cdn.shopify.com\/s\/files\/1\/0576\/5408\/3627\/files\/image_2.jpg?v=1657569900",
-        "collection-card_description-right": "Our Lennox Pendant Necklace blends modernized materials with vintage inspired design",
-        "collection-card_link-right": "",
-        "collection-card_text-right": "customize"
+        "background-img": "shopify:\/\/shop_images\/Background.jpg"
       }
     },
     "image_banner": {
