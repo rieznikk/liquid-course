@@ -1,14 +1,14 @@
 {{ 'collection-card.css' | asset_url | stylesheet_tag }}
 
 <div class="collection-card">
-    <h2 class="heading alex-murphy__80-50_400">{{ block.settings.heading }}</h2>
+    <h2 class="heading alex-murphy__80-50_400">{{ heading }}</h2>
     <div class="border">
-        <img src="{{ block.settings.photo }}" class="collection-card_photo">
+        <img src="{{ photo }}" class="collection-card_photo">
         <div class="collection-card_description">
-            <p class="red-hat__15-20_400">{{ block.settings.description }}</p>
+            <p class="red-hat__15-20_400">{{ description }}</p>
         </div>
         <div class="collection-card_btn--wrapper">
-            <a class="chakra-petch__20-25_700 collection-card_btn" href="{{ block.settings.link_text }}">{{ block.settings.btn_text }}</a>
+            <a class="chakra-petch__20-25_700 collection-card_btn" href="{{ link_text }}">{{ btn_text }}</a>
         </div>
     </div>
 </div>
