@@ -1,46 +1,5 @@
 {{ 'main-collection.css' | asset_url | stylesheet_tag }}
 
-<section class="main-collection" id="{{ section.id }}">
-    <div class="background-img">
-        <div class="gradient-top"></div>
-        <div class="collection-card">
-            <h2 class="heading alex-murphy__80-50_400">{{ section.settings.collection-card_heading-left }}</h2>
-            <div class="border">
-                <img src="{{ section.settings.collection-card_photo-left }}" class="collection-card_photo">
-            <div class="collection-card_description">
-                <p class="red-hat__15-20_400">{{ section.settings.collection-card_description-left }}</p>
-            </div>
-            <div class="collection-card_btn--wrapper">
-                <a class="chakra-petch__20-25_700 collection-card_btn" href="{{ section.settings.collection-card_link-left }}">{{ section.settings.collection-card_text-left }}</a>
-            </div>
-            </div>
-        </div>
-        <div class="collection-card">
-            <h2 class="heading alex-murphy__80-50_400 heading-right">{{ section.settings.collection-card_heading-right }}</h2>
-            <div class="border">
-                 <img src="{{ section.settings.collection-card_photo-right }}" class="collection-card_photo">
-            <div class="collection-card_description">
-                <p class="red-hat__15-20_400">{{ section.settings.collection-card_description-right }}</p>
-            </div>
-            <div class="collection-card_btn--wrapper">
-                <a class="chakra-petch__20-25_700 collection-card_btn" href="{{ section.settings.collection-card_link-right }}">{{ section.settings.collection-card_text-right }}</a>
-            </div>
-            </div>
-        </div>
-        <div class="gradient-low"></div>
-    </div>
-</section>
-
-{% for block in section.blocks %}
-    {% if block.type == "collection-card" %}
-        {%
-            render 'collection-card',
-            collection: block.settings.collection,
-            link_text: section.settings.link_text
-        %}
-    {% endif %}
-{% endfor %}
-
 <style>
     {% if section.settings.background-img %}    
         #{{ section.id }} .background-img {
@@ -49,8 +8,28 @@
     {% endif %}
 </style>
 
-{% schema %}
+<section class="main-collection" id="{{ section.id }}">
+    <div class="background-img">
+        <div class="gradient-top"></div>
+        <div class="collection-card__container">
+            {% for block in section.blocks %}
+                {% if block.type == "collection-card" %}
+                    {%
+                        render 'collection-card',
+                        heading: block.settings.heading,
+                        photo: block.settings.photo,
+                        description: block.settings.description,
+                        link_text: block.settings.link_text,
+                        btn_text: block.settings.btn_text
+                    %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="gradient-low"></div>
+    </div>
+</section>
 
+{% schema %}
 
 {
     "name": "Main collection",
@@ -65,56 +44,6 @@
             "type": "image_picker",
             "id": "background-img",
             "label": "Background photo"
-        },
-        {
-           "type": "text",
-           "id": "collection-card_heading-left",
-           "label": "Collection card heading left"
-        },
-        {
-            "type": "url",
-            "id": "collection-card_photo-left",
-            "label": "Collection card photo left"
-        },
-        {
-            "type": "text",
-            "id": "collection-card_description-left",
-            "label": "Collection card desciption left"
-        },
-        {
-           "type": "url",
-           "id": "collection-card_link-left",
-           "label": "Link left button"
-        },
-        {
-            "type": "text",
-            "id": "collection-card_text-left",
-            "label": "Text left button"
-        },
-        {
-            "type": "text",
-            "id": "collection-card_heading-right",
-            "label": "Collection card heading right"
-        },
-        {
-            "type": "url",
-            "id": "collection-card_photo-right",
-            "label": "Collection card photo right"
-        },
-        {
-            "type": "text",
-            "id": "collection-card_description-right",
-            "label": "Collection card desciption right"
-        },
-        {
-            "type": "url",
-            "id": "collection-card_link-right",
-            "label": "Link right button"
-        },
-        {
-            "type": "text",
-            "id": "collection-card_text-right",
-            "label": "Text right button"
         }
     ],
     "blocks": [
@@ -123,9 +52,29 @@
             "type": "collection-card",
             "settings": [
                 {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading"
+                },
+                {
                     "type": "image_picker",
-                    "id": "image-card",
+                    "id": "photo",
                     "label": "Image card"
+                },
+                {
+                    "type": "text",
+                    "id": "description",
+                    "label": "Dedscription"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_text",
+                    "label": "Button text"
+                },
+                {
+                    "type": "url",
+                    "id": "link_text",
+                    "label": "Button link"
                 }
             ]
         }

@@ -15,29 +15,27 @@
     }
 }
 
-
 .background-img {
     height: inherit;
     width: 100%;
     object-fit: cover;
     object-position: center center;
+}
+
+.collection-card__container {
     display: flex;
     flex-direction: row;
     align-items: center;
     align-content: center;
     justify-content: space-evenly;
+    padding-top: 130px;
 }
 
 @media (max-width: 768px) {
-    .background-img {
+    .collection-card__container {
         flex-direction: column;
         align-items: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .background-img {
-        justify-content: center;
+        padding-top: 70px;
     }
 }
 
@@ -61,14 +59,6 @@
     transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
-
-
-
-.collection-card_wrapper {
-    display: flex;
-    justify-content: space-evenly;
-}
-
 .heading {
     font-size: 45px;
     line-height: 30px;
@@ -78,8 +68,6 @@
     text-transform: uppercase;
     color: #FDFEFF;
 }
-
-
 
 @media (max-width: 768px) {
     .heading {
@@ -101,7 +89,6 @@
     align-items: center;
     max-width: 710px;
     max-height: 528px;
-    margin-top: 70px;
 }
 
 @media (max-width: 1500px) {
@@ -126,6 +113,7 @@
 @media (max-width: 768px) {
     .collection-card {
         width: 325px;
+        margin-top: 15px;
     }
 }
 
@@ -143,7 +131,7 @@
     right: 230px;
 }
 
-.collection-card_photo {
+.collection-card__photo {
     margin-bottom: -9px;
     width: 100%;
 }
@@ -159,7 +147,7 @@
     }
 }
 
-.collection-card_description {
+.collection-card__description {
     background-color: #000000;
     border-radius: 0px 0px 15px 15px;
     padding-left: 150px;
@@ -171,7 +159,7 @@
 }
 
 @media (max-width: 1078px) {
-    .collection-card_description {
+    .collection-card__description {
         padding-left: 15px;
         padding-right: 15px;
         padding-bottom: 40px;
@@ -183,7 +171,7 @@
     text-decoration: none;
 }
 
-.collection-card_btn {
+.collection-card__btn {
     padding: 15px 30px;
     gap: 10px;
     background: #000000;
@@ -195,7 +183,7 @@
 }
 
 @media (max-width: 768px) {
-    .collection-card_btn {
+    .collection-card__btn {
         padding: 12px 25px 13px;
         gap: 10px;
         font-size: 15px;
@@ -203,7 +191,7 @@
     }
 }
 
-.collection-card_btn--wrapper {
+.collection-card__btn_wrapper {
     display: flex;
     justify-content: center;
     transform: translate(0,50%);
